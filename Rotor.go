@@ -1,5 +1,5 @@
 package main
-
+// import "fmt"
 /*
 Num | Char Sequence              | Turnover | Numerical Sequence (Adjusted for Turnover)
   I	| EKMFLGDQVZNTOWYHXUSPAIBRCJ |	  Q	    | 16, 21, 25, 13, 19, 14, 22, 24, 7, 23, 20, 18, 15, 0, 8, 1, 17, 2, 9, 4, 10, 12, 5, 11, 6, 3
@@ -25,12 +25,21 @@ func rotorForNumber(rotorNumber int, offset int) Rotor {
 }
 
 func (r Rotor) resultFromLeftIndex(leftIndex int) int {
-	adjustedIndex := leftIndex + r.currentOffset % len(r.sequence)
+	// fmt.Println("========Encoding=======")
+	// fmt.Println(leftIndex)
+	adjustedIndex := (leftIndex + r.currentOffset) % len(r.sequence)
+	// fmt.Println("Adjusted Index")
+	// fmt.Println(adjustedIndex)
 	rightSideIndex := r.sequence[adjustedIndex] 
+	// fmt.Println("Pre-adjusted Output")
+	// fmt.Println(rightSideIndex)
 	adjustedRightSideIndex := rightSideIndex - r.currentOffset
 	if adjustedRightSideIndex < 0 {
 		adjustedRightSideIndex += len(r.sequence)
 	}
+	// fmt.Println("Adjusted Output")
+	// fmt.Println(adjustedRightSideIndex)
+	// fmt.Println("=====END Left Encode=====")
 	return adjustedRightSideIndex
 }
 

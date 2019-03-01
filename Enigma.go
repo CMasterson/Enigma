@@ -8,9 +8,9 @@ import (
 func main() {
 	fmt.Println("Hello, playground")
 
-	var rotorStack RotorStack
-	rotorStack.initStack([3]int{0,1,2}, [3]int{0,0,0})
+	var stack RotorReflectorStack
+	stack.initStack()
 
-	fmt.Println(rotorStack.encodeLeftIndex(1))
-	fmt.Println(rotorStack.encodeRightIndex(19))
+	fmt.Println(stack.code(0))
+	fmt.Println(stack.code(21))
 }
