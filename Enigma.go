@@ -2,6 +2,7 @@ package main
 
 import (
 "fmt"
+"strings"
 )
 
 
@@ -24,16 +25,26 @@ func main() {
 	plugBoard.pair("R", "T")
 	plugBoard.pair("U", "I")
 
-	fmt.Println(fullEncode("ILHGNTPCOO", plugBoard, &stack))
+	fmt.Println(fullEncode("iLhGN TPCoo", plugBoard, &stack))
 
 }
 
 func fullEncode(message string, plugBoard PlugBoard, stack *RotorReflectorStack) string {
 	var output string
-	for i := 0; i < len(message); i++ {
+
+	var formattedMessage = strings.ToUpper(message)
+
+	for i := 0; i < len(formattedMessage); i++ {
+		var char = string(formattedMessage[i])
+
+		if char == " " {
+			output = output + " "
+			continue
+		}
+
 		stack.rotorStack.incrementOffset()
 
-		var inProgress = intForChar(plugBoard.valueForInput(string(message[i])))
+		var inProgress = intForChar(plugBoard.valueForInput(char))
 		inProgress = stack.code(inProgress)
 		var codedChar = plugBoard.valueForInput(charForInt(inProgress))
 
