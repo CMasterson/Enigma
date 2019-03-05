@@ -14,9 +14,5 @@ type Reflector struct {
 }
 
 func (r Reflector) outputForInput(input int) int {
-	fmt.Println("===Reflector===")
-	fmt.Println(input)
-	fmt.Println(r.sequence[input])
-	fmt.Println("===END Reflector===")
 	return r.sequence[input]
 }
