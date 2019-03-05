@@ -1,5 +1,5 @@
 package main
-import "fmt"
+
 /*
 Name   | Char sequence
 UKW-A  | EJMZALYXVBWFCRQUONTSPIKHGD  |  
