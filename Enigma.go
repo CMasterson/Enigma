@@ -14,18 +14,18 @@ func main() {
 
 	var plugBoard PlugBoard
 	plugBoard.pairings = make(map[string]string)
-	plugBoard.pair("A", "G")
-	plugBoard.pair("B", "D")
-	plugBoard.pair("E", "F")
-	plugBoard.pair("H", "J")
-	plugBoard.pair("K", "Y")
-	plugBoard.pair("L", "M")
-	plugBoard.pair("N", "P")
-	plugBoard.pair("O", "C")
-	plugBoard.pair("R", "T")
-	plugBoard.pair("U", "I")
+	plugBoard.pair("B", "Q")
+	plugBoard.pair("C", "R")
+	plugBoard.pair("D", "I")
+	plugBoard.pair("E", "J")
+	plugBoard.pair("K", "W")
+	plugBoard.pair("M", "T")
+	plugBoard.pair("O", "S")
+	plugBoard.pair("P", "X")
+	plugBoard.pair("U", "Z")
+	plugBoard.pair("G", "H")
 
-	fmt.Println(fullEncode("iLhGN TPCoo", plugBoard, &stack))
+	fmt.Println(fullEncode("Lorem ipsum", plugBoard, &stack))
 
 }
 
